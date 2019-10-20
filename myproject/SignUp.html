@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<style>
+		.form{
+			
+			float:right;
+			
+			background-size: cover;
+			background-position: center;
+			  background-origin: content-box;
+			position: absolute;
+			right:460px;
+			top:35px;
+			padding-right: 150px;
+			padding-left: 150px;
+			
+
+
+
+
+		}
+		h1{
+			color:green;
+		}
+		h2{
+			color:red;
+		}
+		.names{
+			
+			color :darkred;
+			width: 100%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+		}
+		.vv{
+			size:50%;
+			color:red;
+		}
+.nikk{
+	background-color: red;
+}
+a{
+	text-decoration: none;
+	color:red;
+}
+
+	</style>
+</head>
+<body style="background-image:url(logo3.jpg);">
+	<div class="form">
+<form name="rr" onsubmit="return javaScript()" action="nik.html">
+<h1>Welcome To Land Rover </h1><br>
+
+<input type="text" placeholder="First Name" name="fname" class="names">
+<input type="text" placeholder="Last Name" name="lname" class="names"> <br>
+<div class="vv">
+<h2>Looking for</h2>
+<input type="checkbox" >Velar<br>
+<input type="checkbox" >Discovery Sport<br>
+<input type="checkbox" >Evoque<br>
+<input type="checkbox" >Autobiography<br>
+<input type="checkbox" >Defender<br><br>
+</div>
+
+<input type="text" placeholder="Phone Number" name="phone" class="names"><br>
+
+<input type="text" placeholder="Email Address" name="email"class="names"><br>
+
+<input type="password" placeholder="Password" name="passwords" class="names"><br>
+
+<input type="password" placeholder="Confirm Password " name="confpassword"><br><br>
+
+<input type="submit"value="Sign Up" class="nikk">
+<br><br>
+<a href="login.html">Already hava account?</a>
+
+</form>
+</div>
+
+</body>
+<script>
+function javaScript()
+{
+	var FName=document.forms["rr"]["fname"];
+	var LName=document.forms["rr"]["lname"];
+	var Phone=document.forms["rr"]["phone"];
+	var Email=document.forms["rr"]["email"];
+	var Password=document.forms["rr"]["passwords"];
+	var Confirmpass=document.forms["rr"]["confpassword"];
+
+	if(FName.value=="")
+	{
+		window.alert("Please enter your First Name.");
+		return false;
+	}
+
+	if(LName.value=="")
+	{
+		window.alert("Please enter your Last Name.");
+		return false;
+	}
+
+	if(isNaN(Phone.value))
+	{
+		window.alert("Please enter only Numbers.");
+		return false;
+	}
+	 if(Phone.value.toString().length!=10)
+	{
+		window.alert("Please enter 10 Numbers.");
+		return false;
+	}	
+
+
+    var passlength=Password.value.length;
+   
+if(passlength<6)
+  {
+  	window.alert("Password must be at least 6 character.");
+  		return false;
+  }
+
+if(Password.value==Confirmpass.value)
+  {
+  	return true;
+  }
+  else
+  {
+  	window.alert("Password must be same.");
+		return false;
+  }
+
+   var atkiposition=Email.value.indexOf("@");
+   var dotkiposition=Email.value.lastIndexOf(".");
+
+   	if(atkiposition<1 || dotkiposition<atkiposition+2 || dotposition+2>=Email.value)
+   	{
+   		window.alert("Please enter valid Email address.");
+		return false;
+   	}
+
+
+
+   
+
+
+
+}
+</script>
+</html>
